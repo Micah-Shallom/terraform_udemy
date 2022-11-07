@@ -1,0 +1,19 @@
+Terraform Notes
+-----------------------------------------------------
+
+
+terraform fmt --diff     ----->>>>>> shows the difference in terraform runs just as a git log will
+
+terraform plan --out plan1
+terraform apply plan1   ------->>>>>> this runs the plan without validation it is similar to 
+						  terraform apply --auto-approve
+
+terraform state list
+
+sudo apt install jq    -------------->>>>>>> provides a formatter for states files
+terraform show --json | jq
+
+
+terraform console -------->>>>>>> takes you to the terraform console
+
+[for i in docker_container.nginx_container[*] : join(":", [i.ip_address], i.ports[*]["external"])]
