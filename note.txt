@@ -17,3 +17,8 @@ terraform show --json | jq
 terraform console -------->>>>>>> takes you to the terraform console
 
 [for i in docker_container.nginx_container[*] : join(":", [i.ip_address], i.ports[*]["external"])]
+
+terraform workspace new dev
+terraform workspace new prod
+terraform workspace list
+terraform workspace select dev
